@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hrms-backend
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: "npm install"
+    startCommand: "node index.js"
+    envVars:
+      - key: DATABASE_URL
+        sync: true
