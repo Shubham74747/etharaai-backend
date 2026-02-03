@@ -4,8 +4,8 @@ services:
     env: docker
     plan: free
     dockerfilePath: Dockerfile
-    buildCommand: "npm install"
-    startCommand: "node index.js"
     envVars:
       - key: DATABASE_URL
         sync: true
+    # health check used by Render to detect healthy containers
+    healthCheckPath: /api/health
